@@ -1,0 +1,24 @@
+{
+  "name": "obs_widgets",
+  "version": "1.0.0",
+  "description": "OBS Widgets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markotronojp/obs_widgets.git"
+  },
+  "author": "Edgar Marko Trono",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markotronojp/obs_widgets/issues"
+  },
+  "homepage": "https://github.com/markotronojp/obs_widgets#readme",
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}

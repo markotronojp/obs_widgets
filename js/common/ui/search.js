@@ -12,8 +12,16 @@ const config = {
   default: {
     url: 'https://api.scryfall.com/cards/named?exact=%CARDNAME&format=json',
     src: './img/card_back.png',
-  }
+  },
 };
+
+function constructUrl(card) {
+  if (!card) return '';
+  return config.default.url.replace(
+    '%CARDNAME',
+    card.replace(' ', '+'),
+  );
+}
 
 export class Search extends Component {
   constructor({
@@ -54,14 +62,6 @@ export class Search extends Component {
   setCardBack() {
     $('img', this.$dom).attr('src', config.default.src);
   }
-}
-
-function constructUrl(card) {
-  if (!card) return '';
-  return config.default.url.replace(
-    '%CARDNAME',
-    card.replace(' ', '+'),
-  );
 }
 
 function createInstance(args) {

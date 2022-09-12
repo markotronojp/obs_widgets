@@ -1,8 +1,8 @@
 import { DX } from './ui/dX.js';
 
 const dList = [
- 6,
- 20,
+  6,
+  20,
 ];
 
 function init($container) {

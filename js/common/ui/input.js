@@ -53,7 +53,7 @@ export class Input extends Component {
 }
 
 function createInstance(args) {
-  return new Template(args);
+  return new Input(args);
 }
 
 export default {

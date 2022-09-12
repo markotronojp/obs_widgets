@@ -1,4 +1,3 @@
-
 import { Player } from './ui/player.js';
 import { Controller } from './ui/controller.js';
 
@@ -81,11 +80,17 @@ class Life {
       this.p2Ctrl.nickname.getVal(),
     );
   }
+
+  run() {
+    /* Temporary */
+    this.isRunning = true;
+  }
 }
 
 function init($container) {
   const life = new Life($container);
-};
+  life.run();
+}
 
 export default {
   init,
