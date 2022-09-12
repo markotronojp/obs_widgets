@@ -46,7 +46,7 @@ export class Controller extends Component {
       this.commander.getDom(),
       this.lifeTotal.getDom(),
       this.nickname.getDom(),
-    ])
+    ]);
   }
 }
 

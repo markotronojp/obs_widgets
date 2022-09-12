@@ -1,4 +1,4 @@
-import { Search } from '../common/ui/search.js'
+import { Search } from '../common/ui/search.js';
 
 function init($container) {
   const search = new Search({});

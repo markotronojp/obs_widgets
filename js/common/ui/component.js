@@ -51,3 +51,7 @@ export class Component {
     return this.$dom instanceof jQuery;
   }
 }
+
+export default {
+
+};
