@@ -1,0 +1,15 @@
+.player {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+}
+
+.player .top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.player div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
