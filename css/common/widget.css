@@ -1,0 +1,14 @@
+:root {
+  --pad: 0.5rem;
+  --half-pad: 0.25rem;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: bolder;
+  margin: 0 !important;
+}
+
+div {
+  user-select: none;
+}
