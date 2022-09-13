@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-sizing: content-box !important;
 }
 
 .d6 .row {
