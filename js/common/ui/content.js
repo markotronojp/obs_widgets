@@ -4,7 +4,7 @@ const config = {
   template: `
     <div class='content'></div>
   `,
-  default: {
+  initial: {
     fontSize: '1rem',
     color: '#000',
   },
@@ -15,8 +15,8 @@ export class Content extends Component {
     width,
     name,
     content,
-    fontSize = config.default.fontSize,
-    color = config.default.color,
+    fontSize = config.initial.fontSize,
+    color = config.initial.color,
   }) {
     super({ width, name, $dom: $(config.template) });
 

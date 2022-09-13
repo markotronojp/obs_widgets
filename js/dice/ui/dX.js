@@ -6,7 +6,7 @@ const config = {
     <div class='dX'>
     </div>
   `,
-  default: {
+  initial: {
     color: '#000',
     fontSize: '5rem',
     side: 20,
@@ -21,8 +21,8 @@ export class DX extends Component {
   }) {
     super({ width, name, $dom: $(config.template) });
     this.content = new Content({
-      color: config.default.color,
-      fontSize: config.default.fontSize,
+      color: config.initial.color,
+      fontSize: config.initial.fontSize,
       content: `d${side}`,
     });
     this.$dom.append(this.content.getDom());
@@ -30,10 +30,10 @@ export class DX extends Component {
     this.$dom.on('click', this.onClickDX.bind(this));
   }
 
-  setSide(side = config.default.side) {
+  setSide(side = config.initial.side) {
     this.side = side;
     if (!$.isNumeric(this.side)) {
-      this.side = config.default.side;
+      this.side = config.initial.side;
     }
   }
 

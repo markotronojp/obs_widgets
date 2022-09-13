@@ -11,7 +11,7 @@ const config = {
   smlFontSize: '2rem',
   medFontSize: '3rem',
   lrgFontSize: '7rem',
-  default: {
+  initial: {
     color: '#fff',
     skull: '💀',
     crown: '🫅',
@@ -24,10 +24,10 @@ export class Player extends Component {
     name,
   }) {
     super({ width, name, $dom: $(config.template) });
-    this.poison = new Content({ fontSize: config.smlFontSize, color: config.default.color });
-    this.commander = new Content({ fontSize: config.smlFontSize, color: config.default.color });
-    this.lifeTotal = new Content({ fontSize: config.lrgFontSize, color: config.default.color });
-    this.nickname = new Content({ fontSize: config.medFontSize, color: config.default.color });
+    this.poison = new Content({ fontSize: config.smlFontSize, color: config.initial.color });
+    this.commander = new Content({ fontSize: config.smlFontSize, color: config.initial.color });
+    this.lifeTotal = new Content({ fontSize: config.lrgFontSize, color: config.initial.color });
+    this.nickname = new Content({ fontSize: config.medFontSize, color: config.initial.color });
     $('.top', this.$dom).append([
       this.poison.getDom(),
       this.commander.getDom(),
@@ -43,7 +43,7 @@ export class Player extends Component {
       this.poison.setContent(poison);
     }
     if (!$.isNumeric(poison)) return;
-    this.poison.setContent(`${String.fromCodePoint(config.default.skull.codePointAt(0))}: ${poison}`);
+    this.poison.setContent(`${String.fromCodePoint(config.initial.skull.codePointAt(0))}: ${poison}`);
   }
 
   setCommander(commander) {
@@ -51,7 +51,7 @@ export class Player extends Component {
       this.commander.setContent(commander);
     }
     if (!$.isNumeric(commander)) return;
-    this.commander.setContent(`${String.fromCodePoint(config.default.crown.codePointAt(0))}: ${commander}`);
+    this.commander.setContent(`${String.fromCodePoint(config.initial.crown.codePointAt(0))}: ${commander}`);
   }
 
   setNickname(nickname) {

@@ -25,7 +25,7 @@ const config = {
       <input type='text' class='nicknameInput' placeholder='Player'>
     </div>
   `,
-  default: {
+  initial: {
     life: 20,
     commander: 20,
     poison: 0,
@@ -42,9 +42,12 @@ export class LifeBar extends Component {
     name,
   }) {
     super({ width, name, $dom: $(config.template) });
-    this.life = config.default.life;
-    this.commander = config.default.commander;
-    this.poison = config.default.poison;
+    this.damageAudio = new Audio('./audio/damage.mp3'); /* http://soundfxcenter.com/sound-effects/street-fighter/0 */
+    this.healAudio = new Audio('./audio/heal.mp3'); /* http://soundfxcenter.com/sound_effect/search.php?sfx=Heal&st=0 */
+
+    this.life = config.initial.life;
+    this.commander = config.initial.commander;
+    this.poison = config.initial.poison;
 
     this.setLifeLabel();
     this.setPoisonLabel();
@@ -68,7 +71,7 @@ export class LifeBar extends Component {
 
   onChangeNicknameInput() {
     if (!$('.nicknameInput', this.$dom).val()) {
-      $('.nickname', this.$dom).text(config.default.playerName);
+      $('.nickname', this.$dom).text(config.initial.playerName);
       return;
     }
 
@@ -112,26 +115,32 @@ export class LifeBar extends Component {
   }
 
   addLife() {
+    this.playHealAudio();
     this.life += 1;
   }
 
   addPoison() {
+    this.playDamageAudio();
     this.poison += 1;
   }
 
   addCommander() {
+    this.playHealAudio();
     this.commander += 1;
   }
 
   minusLife() {
+    this.playDamageAudio();
     this.life -= 1;
   }
 
   minusPoison() {
+    this.playHealAudio();
     this.poison -= 1;
   }
 
   minusCommander() {
+    this.playDamageAudio();
     this.commander -= 1;
   }
 
@@ -148,24 +157,36 @@ export class LifeBar extends Component {
   }
 
   setLifeWidth() {
-    let width = 100 * (this.life / config.default.maxLife);
+    let width = 100 * (this.life / config.initial.maxLife);
     if (width > 100) width = 100;
     if (width < 0) width = 0;
     $('.life .background', this.$dom).css('width', `${width}%`);
   }
 
   setPoisonWidth() {
-    let width = 100 * (this.poison / config.default.maxPoison);
+    let width = 100 * (this.poison / config.initial.maxPoison);
     if (width > 100) width = 100;
     if (width < 0) width = 0;
     $('.poison .background', this.$dom).css('width', `${width}%`);
   }
 
   setCommanderWidth() {
-    let width = 100 * (this.commander / config.default.maxCommander);
+    let width = 100 * (this.commander / config.initial.maxCommander);
     if (width > 100) width = 100;
     if (width < 0) width = 0;
     $('.commander .background', this.$dom).css('width', `${width}%`);
+  }
+
+  playDamageAudio() {
+    this.damageAudio.pause();
+    this.damageAudio.currentTime = 0;
+    this.damageAudio.play();
+  }
+
+  playHealAudio() {
+    this.healAudio.pause();
+    this.healAudio.currentTime = 0;
+    this.healAudio.play();
   }
 }
 

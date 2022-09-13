@@ -4,7 +4,7 @@ const config = {
   template: `
     <input class='input'>
   `,
-  default: {
+  initial: {
     type: 'text',
   },
 };
@@ -27,7 +27,7 @@ export class Input extends Component {
     this.setOnChangeListener(onChangeListener);
   }
 
-  setType(type = config.default.type) {
+  setType(type = config.initial.type) {
     this.$dom.attr('type', type);
   }
 
