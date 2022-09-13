@@ -1,6 +1,7 @@
 :root {
   --pad: 0.5rem;
   --half-pad: 0.25rem;
+  --border-radius: 10px;
 }
 
 body {
