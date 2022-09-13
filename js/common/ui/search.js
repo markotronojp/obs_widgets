@@ -9,7 +9,7 @@ const config = {
       <div class='searchBar'></div>
     </div>
   `,
-  default: {
+  initial: {
     url: 'https://api.scryfall.com/cards/named?exact=%CARDNAME&format=json',
     src: './img/card_back.png',
   },
@@ -17,7 +17,7 @@ const config = {
 
 function constructUrl(card) {
   if (!card) return '';
-  return config.default.url.replace(
+  return config.initial.url.replace(
     '%CARDNAME',
     card.replace(' ', '+'),
   );
@@ -60,7 +60,7 @@ export class Search extends Component {
   }
 
   setCardBack() {
-    $('img', this.$dom).attr('src', config.default.src);
+    $('img', this.$dom).attr('src', config.initial.src);
   }
 }
 
