@@ -1,25 +1,3 @@
 #life {
   width: 500px;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#life .display {
-  width: 100%;
-  height: 300px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: var(--half-pad);
-  box-sizing: border-box;
-}
-
-#life .control {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: var(--half-pad);
-  box-sizing: border-box;
 }
