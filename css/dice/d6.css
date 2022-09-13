@@ -1,0 +1,34 @@
+.d6 {
+  width: 180px;
+  height: 180px;
+  background-color: #fff;
+  border: solid 6px #000;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.d6 .row {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.d6 .spacer {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d6 .pip {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: #000;
+}

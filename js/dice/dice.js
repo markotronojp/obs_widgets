@@ -1,15 +1,11 @@
-import { DX } from './ui/dX.js';
-
-const dList = [
-  6,
-  20,
-];
+import { D6 } from './ui/d6.js';
+import { D20 } from './ui/d20.js';
 
 function init($container) {
-  dList.forEach((side) => {
-    const dX = new DX({ side });
-    $container.append(dX.getDom());
-  });
+  const d6 = new D6({});
+  $container.append(d6.getDom());
+  const d20 = new D20({});
+  $container.append(d20.getDom());
 }
 
 export default {
