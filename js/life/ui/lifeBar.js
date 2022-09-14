@@ -5,22 +5,22 @@ const config = {
     <div class='lifeBar'>
       <div class='nickname left'>Player</div>
       <div class='life bar'>
-        <div class='minus ctrl left'>&nbsp;</div>
+        <div class='minus ctrl right'>&nbsp;</div>
         <div class='label'>Life</div>
-        <div class='background left'></div>
-        <div class='plus ctrl right'>&nbsp;</div>
+        <div class='background right'></div>
+        <div class='plus ctrl left'>&nbsp;</div>
       </div>
       <div class='poison bar'>
-        <div class='minus ctrl left'>&nbsp;</div>
+        <div class='minus ctrl right'>&nbsp;</div>
         <div class='label'>Poison</div>
-        <div class='background left'></div>
-        <div class='plus ctrl right'>&nbsp;</div>
+        <div class='background right'></div>
+        <div class='plus ctrl left'>&nbsp;</div>
       </div>
       <div class='commander bar'>
-        <div class='minus ctrl left'>&nbsp;</div>
+        <div class='minus ctrl right'>&nbsp;</div>
         <div class='label'>Commander</div>
-        <div class='background left'></div>
-        <div class='plus ctrl right'>&nbsp;</div>
+        <div class='background right'></div>
+        <div class='plus ctrl left'>&nbsp;</div>
       </div>
       <div class='lifeControl'>
         <input type='text' class='nicknameInput' placeholder='Player'>
@@ -79,16 +79,16 @@ export class LifeBar extends Component {
     $('.ctrl.minus', this.$dom).removeClass(['left', 'right']);
     $('.ctrl.plus', this.$dom).removeClass(['left', 'right']);
     if (this.isLeft) {
-      $('.background', this.$dom).addClass('right');
-      $('.nickname', this.$dom).addClass('right');
-      $('.ctrl.minus', this.$dom).addClass('right');
-      $('.ctrl.plus', this.$dom).addClass('left');
-      this.isLeft = false;
-    } else {
       $('.background', this.$dom).addClass('left');
-      $('.nickname', this.$dom).addClass('left');
+      $('.nickname', this.$dom).addClass('right');
       $('.ctrl.minus', this.$dom).addClass('left');
       $('.ctrl.plus', this.$dom).addClass('right');
+      this.isLeft = false;
+    } else {
+      $('.background', this.$dom).addClass('right');
+      $('.nickname', this.$dom).addClass('left');
+      $('.ctrl.minus', this.$dom).addClass('right');
+      $('.ctrl.plus', this.$dom).addClass('left');
       this.isLeft = true;
     }
   }
