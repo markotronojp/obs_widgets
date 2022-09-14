@@ -3,26 +3,28 @@ import { Component } from '../../common/ui/component.js';
 const config = {
   template: `
     <div class='lifeBar'>
-      <div class='nickname'>Player</div>
+      <div class='nickname left'>Player</div>
       <div class='life bar'>
-        <div class='minus ctrl'>-</div>
+        <div class='minus ctrl left'>&nbsp;</div>
         <div class='label'>Life</div>
-        <div class='background'></div>
-        <div class='plus ctrl'>+</div>
+        <div class='background left'></div>
+        <div class='plus ctrl right'>&nbsp;</div>
       </div>
       <div class='poison bar'>
-        <div class='minus ctrl'>-</div>
+        <div class='minus ctrl left'>&nbsp;</div>
         <div class='label'>Poison</div>
-        <div class='background'></div>
-        <div class='plus ctrl'>+</div>
+        <div class='background left'></div>
+        <div class='plus ctrl right'>&nbsp;</div>
       </div>
       <div class='commander bar'>
-        <div class='minus ctrl'>-</div>
+        <div class='minus ctrl left'>&nbsp;</div>
         <div class='label'>Commander</div>
-        <div class='background'></div>
-        <div class='plus ctrl'>+</div>
+        <div class='background left'></div>
+        <div class='plus ctrl right'>&nbsp;</div>
       </div>
-      <input type='text' class='nicknameInput' placeholder='Player'>
+      <div class='lifeControl'>
+        <input type='text' class='nicknameInput' placeholder='Player'>
+        <button class='toggle'>Toggle</button>
     </div>
   `,
   initial: {
@@ -56,6 +58,7 @@ export class LifeBar extends Component {
     this.setLifeWidth();
     this.setPoisonWidth();
     this.setCommanderWidth();
+    this.isLeft = true;
 
     $('.life .plus', this.$dom).on('click', this.onAddLifeClick.bind(this));
     $('.life .minus', this.$dom).on('click', this.onMinusLifeClick.bind(this));
@@ -67,6 +70,27 @@ export class LifeBar extends Component {
     $('.commander .minus', this.$dom).on('click', this.onMinusCommanderClick.bind(this));
 
     $('.nicknameInput', this.$dom).on('input change', this.onChangeNicknameInput.bind(this));
+    $('.toggle', this.$dom).on('click', this.onClickToggle.bind(this));
+  }
+
+  onClickToggle() {
+    $('.background', this.$dom).removeClass(['left', 'right']);
+    $('.nickname', this.$dom).removeClass(['left', 'right']);
+    $('.ctrl.minus', this.$dom).removeClass(['left', 'right']);
+    $('.ctrl.plus', this.$dom).removeClass(['left', 'right']);
+    if (this.isLeft) {
+      $('.background', this.$dom).addClass('right');
+      $('.nickname', this.$dom).addClass('right');
+      $('.ctrl.minus', this.$dom).addClass('right');
+      $('.ctrl.plus', this.$dom).addClass('left');
+      this.isLeft = false;
+    } else {
+      $('.background', this.$dom).addClass('left');
+      $('.nickname', this.$dom).addClass('left');
+      $('.ctrl.minus', this.$dom).addClass('left');
+      $('.ctrl.plus', this.$dom).addClass('right');
+      this.isLeft = true;
+    }
   }
 
   onChangeNicknameInput() {
