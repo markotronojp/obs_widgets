@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover">
+
+        <!-- Font -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+        <!-- CSS -->
+        <link rel='stylesheet' type='text/css' href='css/common/widget.css'>
+        <link rel='stylesheet' type='text/css' href='css/dice/dice.css'>
+        <link rel='stylesheet' type='text/css' href='css/dice/d6.css'>
+        <link rel='stylesheet' type='text/css' href='css/dice/d20.css'>
+
+        <!-- JavaScript Libraries -->
+        <script src='js/lib/jquery-3.6.0.min.js'></script>
+
+        <script type="module">
+          import dice from './js/dice/dice.js';
+
+          dice.init($('#dice'));
+        </script>
+    </head>
+    <body>
+        <div id='dice'>
+        </div>
+    </body>
+</html>

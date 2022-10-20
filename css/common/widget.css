@@ -1,0 +1,16 @@
+:root {
+  --pad: 0.5rem;
+  --half-pad: 0.25rem;
+  --border-radius: 10px;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: bolder;
+  margin: 0 !important;
+}
+
+div {
+  user-select: none;
+  box-sizing: border-box;
+}

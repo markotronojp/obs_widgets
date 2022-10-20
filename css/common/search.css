@@ -1,0 +1,23 @@
+.search {
+  width: 336px;
+  height: 490px;
+  padding: var(--pad);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.search img {
+  width: 98%;
+  height: auto;
+}
+
+.search .searchBar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: var(--half-pad);
+}

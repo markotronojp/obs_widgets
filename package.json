@@ -1,0 +1,43 @@
+{
+  "name": "obs_widgets",
+  "version": "1.0.0",
+  "description": "OBS Widgets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "lint": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "lint-staged": {
+    "!(**/js/lib/*)*.js": [
+      "eslint"
+    ],
+    "!(**/css/lib/*)*.css": [
+      "stylelint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markotronojp/obs_widgets.git"
+  },
+  "author": "Edgar Marko Trono",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markotronojp/obs_widgets/issues"
+  },
+  "homepage": "https://github.com/markotronojp/obs_widgets#readme",
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard": "^28.0.0"
+  }
+}

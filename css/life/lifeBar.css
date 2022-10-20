@@ -1,0 +1,87 @@
+.lifeBar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--half-pad);
+}
+
+.lifeBar .nickname {
+  width: 100%;
+  color: #fff;
+  padding-top: var(--half-pad);
+}
+
+.lifeBar .nickname.left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.lifeBar .nickname.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.lifeBar .nicknameInput {
+  padding-top: var(--half-pad);
+}
+
+.lifeBar .bar {
+  width: 100%;
+  height: 30px;
+  border: 3px solid #fff;
+  border-radius: var(--border-radius);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.lifeBar .bar .label {
+  z-index: 2;
+  color: #fff;
+}
+
+.lifeBar .bar .ctrl {
+  z-index: 2;
+  padding: var(--pad);
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+}
+
+.lifeBar .bar .background {
+  border-radius: 6px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.lifeBar .bar .background.left,
+.lifeBar .bar .ctrl.left {
+  left: 0;
+}
+
+.lifeBar .bar .background.right,
+.lifeBar .bar .ctrl.right {
+  right: 0;
+}
+
+.lifeBar .life .background {
+  background-color: #006400;
+}
+
+.lifeBar .poison .background {
+  background-color: #4b0082;
+}
+
+.lifeBar .commander .background {
+  background-color: #c71585;
+}
+
+.lifeBar .lifeControl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
